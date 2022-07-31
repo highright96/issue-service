@@ -8,12 +8,8 @@ This project is an issue management application developed by referring to fastca
 * **TestContainers** for integration testing.
 * **Kotest** for unit testing.
 
----
-
 ## Architecture
 This project consists of several Gradle subprojects separated based on Domain-driven design (DDD) as below.
-
----
 
 ## Server API
 ### 1. Get issues API
