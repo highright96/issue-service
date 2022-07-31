@@ -17,26 +17,26 @@ This project consists of several Gradle subprojects separated based on Domain-dr
 
 ## Server API
 ### 1. Get issues API
-```json
+```
 GET {host}/api/v1/issues?status=TODO
 ```
 
 ### 2. Post issue API
-```json
+```
 POST {host}/api/v1/issues
 ```
 
 ### 3. Get issue API
-```json
+```
 GET {host}/api/v1/issues/{issueId}
 ```
 
 ### 4. Update issue API
-```json
+```
 PUT {host}/api/v1/issues/{issueId}
 ```
 
 ### 5. Delete issue API
-```json
+```
 DELETE {host}/api/v1/issues/{issueId}
 ```
