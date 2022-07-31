@@ -44,6 +44,9 @@ subprojects {
 
         // Test
         testImplementation("org.springframework.boot:spring-boot-starter-test")
+
+        // Util
+        implementation("io.arrow-kt:arrow-core:1.1.2")
     }
 
     dependencyManagement {
