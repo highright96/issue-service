@@ -1,5 +1,6 @@
-package com.example.issueservice.exception
+package com.example.issueservice.handler
 
+import com.example.issueservice.exception.ServerException
 import mu.KotlinLogging
 import org.springframework.web.bind.annotation.ExceptionHandler
 import org.springframework.web.bind.annotation.RestControllerAdvice
@@ -10,7 +11,7 @@ class GlobalExceptionHandler {
     private val logger = KotlinLogging.logger {}
 
     companion object {
-        private const val UNDEFINED_SERVER_ERROR_MESSAGE = "Server Undefined Internal Error"
+        private const val UNDEFINED_SERVER_ERROR_MESSAGE = "Server Undefined Internal Error."
     }
 
     @ExceptionHandler(ServerException::class)
