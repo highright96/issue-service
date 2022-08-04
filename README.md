@@ -6,7 +6,6 @@ This project is an issue management application developed by referring to fastca
 * **Gradle** as a build tool.
 * **Arrow Core** for type-safe error handling.
 * **TestContainers** for integration testing.
-* **Kotest** for unit testing.
 
 ## Architecture
 This project consists of several Gradle subprojects separated based on Domain-driven design (DDD) as below.
