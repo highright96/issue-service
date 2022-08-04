@@ -10,7 +10,6 @@ data class IssueResponse(
     val id: Long,
     val summary: String,
     val description: String,
-    val userId: Long,
     val type: IssueType,
     val priority: IssuePriority,
     val status: IssueStatus,

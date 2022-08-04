@@ -8,7 +8,6 @@ import com.example.issueservice.model.Issue
 
 fun CreateIssueRequest.toCommand(): CreateIssueCommand {
     val issue = Issue(
-        userId = userId,
         summary = summary,
         description = description,
         type = type,
@@ -23,7 +22,6 @@ fun IssueResult.toResponse() =
         id = issue.id!!,
         summary = issue.summary,
         description = issue.description,
-        userId = issue.userId,
         type = issue.type,
         priority = issue.priority,
         status = issue.status,

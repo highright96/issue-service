@@ -4,13 +4,10 @@ import javax.persistence.*
 
 @Entity
 @Table
-class Issue(
+data class Issue(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long? = null,
-
-    @Column
-    var userId: Long,
 
     @Column
     var summary: String,
