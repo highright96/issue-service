@@ -1,6 +1,9 @@
 dependencies {
     implementation(project(":domain"))
+    testImplementation(project(":presentation"))
+
+    implementation("com.linecorp.kotlin-jdsl:spring-data-kotlin-jdsl-starter:2.0.4.RELEASE")
 
     // Database
-    runtimeOnly("com.h2database:h2")
+    implementation("org.postgresql:postgresql:42.3.3")
 }
