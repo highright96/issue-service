@@ -20,18 +20,3 @@ GET {host}/api/v1/issues?status=TODO
 ```
 POST {host}/api/v1/issues
 ```
-
-### 3. Get issue API
-```
-GET {host}/api/v1/issues/{issueId}
-```
-
-### 4. Update issue API
-```
-PUT {host}/api/v1/issues/{issueId}
-```
-
-### 5. Delete issue API
-```
-DELETE {host}/api/v1/issues/{issueId}
-```
