@@ -7,12 +7,14 @@ import com.example.issueservice.model.IssueType
 import com.example.issueservice.util.genString
 
 object IssueStub {
-    fun gen() =
+    fun gen(
+        status: IssueStatus = IssueStatus.IN_PROGRESS
+    ) =
         Issue(
             summary = genString(),
             description = genString(),
             type = IssueType.TASK,
             priority = IssuePriority.LOW,
-            status = IssueStatus.IN_PROGRESS
+            status = status
         )
 }

@@ -1,6 +1,7 @@
 package com.example.issueservice.repository
 
 import com.example.issueservice.JpaIssueRepository
+import com.example.issueservice.model.IssueStatus
 import com.example.issueservice.stub.IssueStub
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
@@ -23,5 +24,18 @@ class JpaIssueRepositoryImplTest {
 
         // then
         assertEquals(expected, actual)
+    }
+
+    @Test
+    fun `get issues`() {
+        // given
+        jpaIssueRepository.save(IssueStub.gen(IssueStatus.IN_PROGRESS))
+        jpaIssueRepository.save(IssueStub.gen(IssueStatus.TODO))
+
+        // when
+        val actual = jpaIssueRepository.findByStatus(IssueStatus.IN_PROGRESS).orNull()
+
+        // then
+        assertEquals(1, actual!!.size)
     }
 }
