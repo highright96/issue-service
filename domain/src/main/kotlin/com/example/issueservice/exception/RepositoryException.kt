@@ -24,5 +24,5 @@ sealed class RepositoryException(
     ) : RepositoryException(message, cause)
 }
 
-fun <T> Either<RepositoryException, T>.unwrap(): T =
+fun <T> Either<RepositoryException, T>.ifLeftThrow(): T =
     getOrHandle { throw it.convert() }

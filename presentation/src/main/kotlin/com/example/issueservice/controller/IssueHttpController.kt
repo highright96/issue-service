@@ -4,9 +4,9 @@ import com.example.issueservice.converter.toCommand
 import com.example.issueservice.converter.toResponse
 import com.example.issueservice.dto.CreateIssueRequest
 import com.example.issueservice.dto.IssueResponse
+import com.example.issueservice.model.IssueStatus
 import com.example.issueservice.service.IssueService
 import org.springframework.http.HttpStatus
-import org.springframework.http.MediaType
 import org.springframework.web.bind.annotation.*
 
 @RestController
@@ -14,10 +14,21 @@ import org.springframework.web.bind.annotation.*
 class IssueHttpController(
     private val issueService: IssueService
 ) {
-    @PostMapping(consumes = [MediaType.APPLICATION_JSON_VALUE])
+    @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    fun createIssue(@RequestBody request: CreateIssueRequest): IssueResponse {
+    fun createIssue(
+        @RequestBody request: CreateIssueRequest
+    ): IssueResponse {
         val result = issueService.createIssue(request.toCommand())
+        return result.toResponse()
+    }
+
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
+    fun getIssues(
+        @RequestParam status: IssueStatus
+    ): List<IssueResponse> {
+        val result = issueService.getIssues(status)
         return result.toResponse()
     }
 }
