@@ -1,5 +1,5 @@
 # Issue management service
-This project is an issue management application developed by referring to fastcampus lecture.
+This project is an issue management application
 
 ## Tech stack
 * **Kotlin** as a main language.
