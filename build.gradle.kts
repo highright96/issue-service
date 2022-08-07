@@ -44,6 +44,8 @@ subprojects {
 
         // Test
         testImplementation("org.springframework.boot:spring-boot-starter-test")
+        testImplementation ("org.testcontainers:junit-jupiter:1.17.3")
+        testImplementation("org.testcontainers:postgresql:1.17.3")
 
         // Util
         implementation("io.arrow-kt:arrow-core:1.1.2")

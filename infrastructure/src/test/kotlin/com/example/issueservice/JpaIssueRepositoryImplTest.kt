@@ -1,15 +1,12 @@
-package com.example.issueservice.repository
+package com.example.issueservice
 
-import com.example.issueservice.JpaIssueRepository
 import com.example.issueservice.model.IssueStatus
 import com.example.issueservice.stub.IssueStub
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.boot.test.context.SpringBootTest
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class JpaIssueRepositoryImplTest {
+class JpaIssueRepositoryImplTest : IntegrationTest() {
 
     @Autowired
     private lateinit var jpaIssueRepository: JpaIssueRepository
@@ -29,11 +26,11 @@ class JpaIssueRepositoryImplTest {
     @Test
     fun `get issues`() {
         // given
-        jpaIssueRepository.save(IssueStub.gen(IssueStatus.IN_PROGRESS))
+        jpaIssueRepository.save(IssueStub.gen(IssueStatus.RESOLVED))
         jpaIssueRepository.save(IssueStub.gen(IssueStatus.TODO))
 
         // when
-        val actual = jpaIssueRepository.findByStatus(IssueStatus.IN_PROGRESS).orNull()
+        val actual = jpaIssueRepository.findByStatus(IssueStatus.RESOLVED).orNull()
 
         // then
         assertEquals(1, actual!!.size)
